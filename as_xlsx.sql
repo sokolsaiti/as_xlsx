@@ -327,6 +327,7 @@ top
     , p_filename varchar2 := null
     , p_sheet pls_integer := null
     , p_UseXf boolean := false
+    , p_sheet_name varchar2 := null
     );
 --
   procedure setUseXf( p_val boolean := true );
@@ -2358,6 +2359,7 @@ style="position:absolute;margin-left:35.25pt;margin-top:3pt;z-index:' || to_char
     , p_filename varchar2 := null
     , p_sheet pls_integer := null
     , p_UseXf boolean := false
+    , p_sheet_name varchar2 := null
     )
   is
     t_sheet pls_integer;
@@ -2375,7 +2377,7 @@ style="position:absolute;margin-left:35.25pt;margin-top:3pt;z-index:' || to_char
     setUseXf( p_UseXf );
     if p_sheet is null
     then
-      new_sheet;
+      new_sheet(p_sheetname => p_sheet_name);
     end if;
     t_c := dbms_sql.open_cursor;
     dbms_sql.parse( t_c, p_sql, dbms_sql.native );
