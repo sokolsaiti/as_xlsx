@@ -1,1 +1,4 @@
 This is a PL/SQL package written by Anton Scheffer which allows us to export Excel XLSX files from an Oracle Database.
+
+Code generation to save time:
+https://github.com/mrprogre/oracle-xlsx
